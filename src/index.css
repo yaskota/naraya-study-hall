@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Colour tokens. Light green is taken from the hall's own walls.
+   "Day" is the default; "night" follows the device's dark mode or the
+   toggle in the navbar (data-theme on <html>).
+------------------------------------------------------------------- */
+:root {
+  --bg: #f2f8ef;          /* sage mist: page background            */
+  --wall: #dcefd8;        /* hall-wall green: primary surface       */
+  --wall-deep: #c6e5c0;
+  --surface: #ffffff;     /* paper                                  */
+  --ink: #163a28;         /* bottle green: text and deep sections   */
+  --muted: #4c6a58;
+  --line: #c3dcbf;
+  --leaf: #2f7a45;        /* actions                                */
+  --on-leaf: #ffffff;
+  --seat-ac: #6fbf9c;     /* AC seats: cooler teal-green            */
+  --seat-fan: #a6d26a;    /* non-AC seats: warmer leaf-green        */
+  --lamp: #f4b942;        /* desk-lamp amber, used sparingly        */
+  --stamp: #4a3fa0;       /* office-stamp violet ink                */
+  --deep: #163a28;        /* always-dark panels                     */
+  --on-deep: #e6f4e2;
+  --shadow: 22 58 40;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e2218;
+    --wall: #15321f;
+    --wall-deep: #1c4029;
+    --surface: #173826;
+    --ink: #e3f2df;
+    --muted: #a7c6b1;
+    --line: #2b4d39;
+    --leaf: #86d196;
+    --on-leaf: #0e2218;
+    --seat-ac: #4fa382;
+    --seat-fan: #86b84f;
+    --lamp: #f4b942;
+    --stamp: #b3a8ff;
+    --deep: #0a1a12;
+    --on-deep: #e3f2df;
+    --shadow: 0 0 0;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0e2218;
+  --wall: #15321f;
+  --wall-deep: #1c4029;
+  --surface: #173826;
+  --ink: #e3f2df;
+  --muted: #a7c6b1;
+  --line: #2b4d39;
+  --leaf: #86d196;
+  --on-leaf: #0e2218;
+  --seat-ac: #4fa382;
+  --seat-fan: #86b84f;
+  --lamp: #f4b942;
+  --stamp: #b3a8ff;
+  --deep: #0a1a12;
+  --on-deep: #e3f2df;
+  --shadow: 0 0 0;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-wall: var(--wall);
+  --color-wall-deep: var(--wall-deep);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-leaf: var(--leaf);
+  --color-on-leaf: var(--on-leaf);
+  --color-seat-ac: var(--seat-ac);
+  --color-seat-fan: var(--seat-fan);
+  --color-lamp: var(--lamp);
+  --color-stamp: var(--stamp);
+  --color-deep: var(--deep);
+  --color-on-deep: var(--on-deep);
+
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-hand: "Kalam", "Segoe Print", "Comic Sans MS", cursive;
+}
+
+/* Keep content clear of phone system bars. */
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html {
+  scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 5rem);
+  -webkit-text-size-adjust: 100%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--seat-fan);
+  color: #0e2218;
+}
+
+:focus-visible {
+  outline: 3px solid var(--lamp);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@layer components {
+/* Type scale (roughly a perfect fourth) */
+.t-hero {
+  font-size: clamp(2.6rem, 6.4vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 760;
+  text-wrap: balance;
+}
+.t-h2 {
+  font-size: clamp(2rem, 4.4vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 720;
+  text-wrap: balance;
+}
+.t-h3 {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  font-weight: 650;
+}
+.t-lead {
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  line-height: 1.5;
+  max-width: 34em;
+}
+.t-note {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+/* Seat tiles on the floor plan */
+.seat {
+  aspect-ratio: 1 / 1;
+  border-radius: 28% 28% 18% 18%;
+  box-shadow: inset 0 -0.18em 0 rgb(0 0 0 / 0.12);
+  position: relative;
+}
+.seat::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: -26%;
+  height: 16%;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.35;
+}
+.seat-ac {
+  background: var(--seat-ac);
+  color: var(--seat-ac);
+}
+.seat-fan {
+  background: var(--seat-fan);
+  color: var(--seat-fan);
+}
+
+/* Gallery strip: scrolls sideways on its own when motion is reduced;
+   GSAP switches it to a hard clip when it drives the strip itself. */
+.gallery-clip {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  padding-bottom: 0.5rem;
+}
+
+/* Ruled paper for the result slip */
+.ruled {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2.9rem,
+    var(--line) 2.9rem,
+    var(--line) calc(2.9rem + 1px)
+  );
+}
+
+.shadow-soft {
+  box-shadow: 0 1px 0 rgb(var(--shadow) / 0.06), 0 18px 40px -22px rgb(var(--shadow) / 0.35);
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
