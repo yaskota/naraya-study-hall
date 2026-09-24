@@ -7,6 +7,7 @@ const rows = [
   { label: "Open", value: "24 hours, 7 days" },
   { label: "Sections", value: "AC and non-AC" },
   { label: "Students selected", value: site.selections, suffix: "+", count: true },
+  ...(site.google ? [{ label: "Google rating", value: `${site.google.rating} from ${site.google.reviews} reviews` }] : []),
 ];
 
 export default function Results() {

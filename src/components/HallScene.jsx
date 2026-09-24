@@ -1,3 +1,5 @@
+import { site } from "../data/site";
+
 // Illustrated stand-ins for photos. They use the same colour tokens as the
 // page, so they follow the day/night theme. Replace with real photos via
 // src/data/site.js whenever they are ready.
@@ -170,7 +172,7 @@ const scenes = {
       <rect y="232" width="400" height="68" fill="var(--wall-deep)" />
       <rect x="112" y="30" width="176" height="30" rx="8" fill="var(--leaf)" />
       <text x="200" y="51" textAnchor="middle" fontSize="15" fontWeight="700" fill="var(--on-leaf)" fontFamily="inherit">
-        Naraya Study Hall
+        {site.name}
       </text>
       <rect x="148" y="74" width="104" height="150" rx="6" fill="var(--ink)" opacity="0.85" />
       <path d="M200 74v150" stroke="var(--wall)" strokeWidth="3" />

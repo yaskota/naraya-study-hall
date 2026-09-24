@@ -11,32 +11,15 @@ const links = [
   { href: "#location", label: "Location" },
 ];
 
-function readStoredTheme() {
-  try {
-    return localStorage.getItem("naraya-theme") || "";
-  } catch {
-    return "";
-  }
-}
-
+// The page always opens in the light theme; the toggle switches for this visit only.
 function useTheme() {
-  const [theme, setTheme] = useState(readStoredTheme);
-  const systemDark =
-    typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
-    const root = document.documentElement;
-    if (theme) root.dataset.theme = theme;
-    else delete root.dataset.theme;
-    try {
-      if (theme) localStorage.setItem("naraya-theme", theme);
-      else localStorage.removeItem("naraya-theme");
-    } catch {
-      /* storage unavailable: theme still applies for this visit */
-    }
+    document.documentElement.dataset.theme = theme;
   }, [theme]);
 
-  const isDark = theme ? theme === "dark" : systemDark;
+  const isDark = theme === "dark";
   return [isDark, () => setTheme(isDark ? "light" : "dark")];
 }
 

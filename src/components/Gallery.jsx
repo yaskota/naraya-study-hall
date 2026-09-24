@@ -4,16 +4,29 @@ import { site } from "../data/site";
 import { Icon } from "./icons";
 import HallScene from "./HallScene";
 
-function Photo({ photo, eager = false }) {
-  return photo.src ? (
-    <img
-      src={photo.src}
-      alt={photo.title}
-      loading={eager ? "eager" : "lazy"}
-      className="h-full w-full object-cover"
-    />
-  ) : (
-    <HallScene scene={photo.scene} title={photo.title} />
+// Shows the real photo once it has loaded. If the file isn't there yet
+// (or fails), the matching illustration stays in its place.
+function Photo({ photo }) {
+  const [state, setState] = useState(photo.src ? "loading" : "none");
+
+  return (
+    <div className="relative h-full w-full">
+      {state !== "loaded" && <HallScene scene={photo.scene} title={photo.title} />}
+      {photo.src && state !== "error" && (
+        <img
+          src={photo.src}
+          alt={state === "loaded" ? photo.title : ""}
+          loading="eager"
+          fetchPriority="low"
+          decoding="async"
+          onLoad={() => setState("loaded")}
+          onError={() => setState("error")}
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+            state === "loaded" ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      )}
+    </div>
   );
 }
 
@@ -80,7 +93,7 @@ function Lightbox({ index, onClose, onStep }) {
       <figure data-lb-figure className="w-full max-w-5xl">
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[24px] bg-wall sm:aspect-[16/10]">
           <div data-lb-img className="absolute inset-0">
-            <Photo photo={photo} eager />
+            <Photo photo={photo} />
           </div>
         </div>
         <figcaption className="mt-4 flex flex-wrap items-center justify-between gap-3 text-on-deep">
@@ -254,7 +267,7 @@ export default function Gallery() {
                   className="relative block aspect-[4/3] w-full overflow-hidden rounded-[24px] bg-wall-deep shadow-soft md:h-[min(56vh,520px)] md:w-auto md:rounded-[28px]"
                 >
                   <div data-inner className="absolute inset-y-[-6%] inset-x-[-9%]">
-                    <Photo photo={photo} eager={i === 0} />
+                    <Photo photo={photo} />
                   </div>
                 </button>
                 <figcaption data-caption className="mt-4 flex flex-col gap-0.5 px-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">

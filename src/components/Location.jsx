@@ -72,19 +72,22 @@ export default function Location() {
           scrollTrigger: { trigger: rootRef.current, start: "top 75%" },
         });
 
-        // Map: streets draw themselves, then the pin drops in.
+        // Map card rises in. With the illustrated map, streets draw themselves and the pin drops.
         const map = gsap.timeline({ scrollTrigger: { trigger: "[data-map]", start: "top 75%" } });
-        map
-          .from("[data-map]", { y: 50, opacity: 0, duration: 0.8, ease: "power3.out" })
-          .fromTo("[data-road]", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.2, stagger: 0.12, ease: "power2.inOut" }, 0.2)
-          .from("[data-spot]", { scale: 0, transformOrigin: "50% 50%", stagger: 0.12, duration: 0.5, ease: "back.out(3)" }, 0.9)
-          .from("[data-pin]", { y: -140, duration: 0.7, ease: "bounce.out" }, 1.1);
+        map.from("[data-map]", { y: 50, opacity: 0, duration: 0.8, ease: "power3.out" });
 
-        gsap.fromTo(
-          "[data-pulse]",
-          { attr: { r: 12 }, opacity: 0.5 },
-          { attr: { r: 44 }, opacity: 0, duration: 1.8, ease: "power1.out", repeat: -1, delay: 2 }
-        );
+        if (rootRef.current.querySelector("[data-road]")) {
+          map
+            .fromTo("[data-road]", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.2, stagger: 0.12, ease: "power2.inOut" }, 0.2)
+            .from("[data-spot]", { scale: 0, transformOrigin: "50% 50%", stagger: 0.12, duration: 0.5, ease: "back.out(3)" }, 0.9)
+            .from("[data-pin]", { y: -140, duration: 0.7, ease: "bounce.out" }, 1.1);
+
+          gsap.fromTo(
+            "[data-pulse]",
+            { attr: { r: 12 }, opacity: 0.5 },
+            { attr: { r: 44 }, opacity: 0, duration: 1.8, ease: "power1.out", repeat: -1, delay: 2 }
+          );
+        }
 
         // Nearby: a route line fills as you scroll, each stop lights up when it's reached.
         gsap.fromTo(
@@ -113,7 +116,9 @@ export default function Location() {
         <div data-loc-head className="mb-12 max-w-2xl sm:mb-16">
           <h2 className="t-h2">Easy to reach, easy to stay.</h2>
           <p className="t-lead mt-5 text-muted">
-            The hall is in a convenient, easily accessible spot, with everything a long study day needs close by.
+            {site.shortAddress
+              ? `Find us on ${site.shortAddress}${site.landmark ? `, ${site.landmark}` : ""}. Everything a long study day needs is close by.`
+              : "The hall is in a convenient, easily accessible spot, with everything a long study day needs close by."}
           </p>
         </div>
 
@@ -134,7 +139,7 @@ export default function Location() {
               )}
             </div>
             <div className="flex flex-wrap items-center justify-between gap-4 p-5 sm:p-6">
-              <div className="min-w-0">
+              <div className="min-w-0 max-w-md">
                 <p className="text-lg font-bold">{site.name}</p>
                 <p className="text-muted">{site.address || "Open 24 hours, 7 days a week"}</p>
               </div>

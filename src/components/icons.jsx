@@ -92,6 +92,11 @@ export const Icon = {
       <path d="M12 7.5V12l3 2" />
     </svg>
   ),
+  Star: (p) => (
+    <svg {...base} {...p}>
+      <path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.9Z" fill="currentColor" stroke="none" />
+    </svg>
+  ),
   Seat: (p) => (
     <svg {...base} {...p}>
       <path d="M7 11V5.5A1.5 1.5 0 0 1 8.5 4h7A1.5 1.5 0 0 1 17 5.5V11" />

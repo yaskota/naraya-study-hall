@@ -96,6 +96,11 @@ export default function Hero() {
             <li className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-lamp" /> Since {site.since}
             </li>
+            {site.google && (
+              <li className="flex items-center gap-2">
+                <Icon.Star className="h-5 w-5 text-lamp" /> {site.google.rating} on Google ({site.google.reviews} reviews)
+              </li>
+            )}
           </ul>
         </div>
 

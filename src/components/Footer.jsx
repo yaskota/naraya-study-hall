@@ -97,7 +97,7 @@ export default function Footer() {
             <LogoMark className="h-9 w-9" />
             <div>
               <p className="font-bold">{site.name}</p>
-              <p className="text-sm text-on-deep/65">Since {site.since}</p>
+              <p className="text-sm text-on-deep/65">{site.shortAddress || `Since ${site.since}`}</p>
             </div>
           </div>
           <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2 text-on-deep/75">

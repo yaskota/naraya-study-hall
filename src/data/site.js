@@ -12,26 +12,32 @@ export const site = {
 
   selections: 10, // shown as "10+"
 
-  // Google Maps share link for the hall (used by every "Get directions" button).
-  directionsUrl: "https://share.google/xuUTBvvJ1Y7IpSKle",
+  // Google Maps link for the hall (used by every "Get directions" button).
+  directionsUrl: "https://maps.app.goo.gl/nAkwznu7WkpQzKkZ9",
 
-  // Optional: Google Maps > Share > Embed a map > copy the src="..." URL here
-  // to show a live map. Leave empty to show the illustrated map card.
-  mapEmbedUrl: "",
+  // Live map shown in the Location section. Leave empty to show the illustrated map instead.
+  mapEmbedUrl:
+    "https://www.google.com/maps?q=Narayana+studyhalls,+Mig+7,+5-43,+Sangareddy+Bypass+Rd,+Pothreddipalle,+Sangareddy,+Telangana+502001&output=embed",
 
-  // Optional contact details. Buttons and lines only appear when filled in.
-  address: "",
-  phone: "", // e.g. "+91 98765 43210"
-  whatsapp: "", // digits only with country code, e.g. "919876543210"
+  // Contact details. Buttons and lines only appear when filled in.
+  address:
+    "Mig 7, 5-43, Sangareddy Bypass Rd, beside Bashweshwara statue, APHB Colony, Pothreddipalle, Sangareddy, Telangana 502001",
+  shortAddress: "Sangareddy Bypass Rd, Pothreddipalle, Sangareddy",
+  landmark: "beside the Bashweshwara statue",
+  phone: "+91 79994 99199",
+  whatsapp: "", // digits only with country code, e.g. "917999499199", if this number is on WhatsApp
 
-  // Photos: put image files in /public/photos and set src, e.g. "/photos/hall.jpg".
-  // Any photo with an empty src shows an illustration in its place.
+  // Google rating shown in the hero and on the result slip. Update as reviews come in.
+  google: { rating: "5.0", reviews: 42 },
+
+  // Photos: drop image files into /public/photos using exactly these file names.
+  // Until a file exists, its illustration is shown instead, so nothing breaks.
   photos: [
-    { src: "", scene: "hall", title: "The main reading hall", note: "rows of desks, light green walls" },
-    { src: "", scene: "ac", title: "AC section", note: "cool and quiet all afternoon" },
-    { src: "", scene: "desk", title: "Your desk", note: "room for books, notes and a laptop" },
-    { src: "", scene: "fan", title: "Non-AC section", note: "the same calm, a different corner" },
-    { src: "", scene: "entrance", title: "Entrance and parking", note: "ground-floor parking, straight in" },
+    { src: "/photos/reading-hall.jpg", scene: "hall", title: "The main reading hall", note: "rows of desks, light green walls" },
+    { src: "/photos/ac-section.jpg", scene: "ac", title: "AC section", note: "cool and quiet all afternoon" },
+    { src: "/photos/desk.jpg", scene: "desk", title: "Your desk", note: "room for books, notes and a laptop" },
+    { src: "/photos/non-ac-section.jpg", scene: "fan", title: "Non-AC section", note: "the same calm, a different corner" },
+    { src: "/photos/entrance.jpg", scene: "entrance", title: "Entrance and parking", note: "ground-floor parking, straight in" },
   ],
 
   nearby: [
