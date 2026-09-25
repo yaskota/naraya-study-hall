@@ -35,7 +35,7 @@ function Snowflake() {
 function Fan() {
   return (
     <svg viewBox="0 0 48 48" className="h-14 w-14" aria-hidden="true">
-      <g data-fan style={{ transformOrigin: "24px 24px" }} fill="currentColor">
+      <g data-fan fill="currentColor">
         {[0, 120, 240].map((a) => (
           <path key={a} transform={`rotate(${a} 24 24)`} d="M24 24c-3-6-2-15 4-17 5-1 6 6 2 10-2 2-4 4-6 7Z" />
         ))}
@@ -187,7 +187,13 @@ export default function Facilities() {
 
         // AC: snowflake turns slowly. Non-AC: fan spins.
         inView("[data-card=ac]", gsap.to("[data-snow]", { rotate: 360, duration: 9, ease: "none", repeat: -1, paused: true }), true);
-        inView("[data-card=ac]", gsap.to("[data-fan]", { rotate: 360, duration: 1.1, ease: "none", repeat: -1, paused: true }), true);
+        // svgOrigin pins the spin to the hub at (24, 24) in the fan's own coordinates;
+        // GSAP ignores CSS transform-origin on SVG children, which made it wobble off-centre.
+        inView(
+          "[data-card=ac]",
+          gsap.to("[data-fan]", { rotation: 360, svgOrigin: "24 24", duration: 1.1, ease: "none", repeat: -1, paused: true }),
+          true
+        );
 
         // Water: the drop fills and the surface keeps rippling.
         const water = gsap.timeline({ paused: true });
