@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { gsap, SplitText, useGSAP, MOTION_OK } from "../lib/gsap";
-import { site } from "../data/site";
+import { site, whatsappUrl } from "../data/site";
 import { Icon } from "./icons";
 import { LogoMark } from "./Navbar";
 
@@ -82,6 +82,16 @@ export default function Footer() {
           >
             <Icon.Pin className="h-5 w-5" /> Get directions
           </a>
+          {whatsappUrl && (
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl bg-[#25d366] px-6 py-3.5 font-semibold text-[#06301a] transition-transform hover:-translate-y-0.5"
+            >
+              <Icon.Chat className="h-5 w-5" /> WhatsApp us
+            </a>
+          )}
           {site.phone && (
             <a
               href={`tel:${site.phone.replace(/\s+/g, "")}`}

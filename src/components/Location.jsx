@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { gsap, useGSAP, MOTION_OK } from "../lib/gsap";
-import { site } from "../data/site";
+import { site, whatsappUrl } from "../data/site";
 import { Icon, nearbyIcon } from "./icons";
 
 function IllustratedMap() {
@@ -152,9 +152,9 @@ export default function Location() {
                     <Icon.Phone className="h-5 w-5" /> Call
                   </a>
                 )}
-                {site.whatsapp && (
+                {whatsappUrl && (
                   <a
-                    href={`https://wa.me/${site.whatsapp}`}
+                    href={whatsappUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 rounded-2xl border border-line px-4 py-3 font-semibold hover:bg-wall"

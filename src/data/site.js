@@ -25,7 +25,8 @@ export const site = {
   shortAddress: "Sangareddy Bypass Rd, Pothreddipalle, Sangareddy",
   landmark: "beside the Bashweshwara statue",
   phone: "+91 79994 99199",
-  whatsapp: "", // digits only with country code, e.g. "917999499199", if this number is on WhatsApp
+  whatsapp: "917999499199", // digits only, with country code
+  whatsappMessage: "Hi, I'd like to know about seat availability at Naraya Study Hall.",
 
   // Google rating shown in the hero and on the result slip. Update as reviews come in.
   google: { rating: "5.0", reviews: 42 },
@@ -47,3 +48,8 @@ export const site = {
     { icon: "walk", title: "Easy to reach", text: "Simple to get to for students from nearby areas." },
   ],
 };
+
+// Ready-made WhatsApp chat link with the greeting pre-filled.
+export const whatsappUrl = site.whatsapp
+  ? `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage || "")}`
+  : "";

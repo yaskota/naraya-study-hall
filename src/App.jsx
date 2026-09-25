@@ -8,6 +8,7 @@ import RoundTheClock from "./components/RoundTheClock";
 import Results from "./components/Results";
 import Location from "./components/Location";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function App() {
   // Web fonts change text heights; re-measure scroll positions once they're in.
@@ -33,6 +34,7 @@ export default function App() {
         <Location />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
