@@ -2,7 +2,7 @@
 // updated without touching any component.
 
 export const site = {
-  name: "Naraya Study Hall",
+  name: "Narayana Study Hall",
   since: "November 2023",
   totalSeats: 105,
 
@@ -24,9 +24,10 @@ export const site = {
     "Mig 7, 5-43, Sangareddy Bypass Rd, beside Bashweshwara statue, APHB Colony, Pothreddipalle, Sangareddy, Telangana 502001",
   shortAddress: "Sangareddy Bypass Rd, Pothreddipalle, Sangareddy",
   landmark: "beside the Bashweshwara statue",
-  phone: "+91 79994 99199",
-  whatsapp: "917999499199", // digits only, with country code
-  whatsappMessage: "Hi, I'd like to know about seat availability at Naraya Study Hall.",
+  phone: "+91 99481 31602",
+  phone2: "+91 93471 57236",
+  whatsapp: "919948131602", // digits only, with country code
+  whatsappMessage: "Hi, I'd like to know about seat availability at Narayana Study Hall.",
 
   // Google rating shown in the hero and on the result slip. Update as reviews come in.
   google: { rating: "5.0", reviews: 42 },

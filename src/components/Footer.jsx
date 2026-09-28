@@ -78,7 +78,7 @@ export default function Footer() {
             href={site.directionsUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-2xl bg-lamp px-6 py-3.5 font-semibold text-[#1d2a12] transition-transform hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-2xl bg-lamp px-6 py-3.5 font-semibold text-[#012b59] transition-transform hover:-translate-y-0.5"
           >
             <Icon.Pin className="h-5 w-5" /> Get directions
           </a>
@@ -95,16 +95,24 @@ export default function Footer() {
           {site.phone && (
             <a
               href={`tel:${site.phone.replace(/\s+/g, "")}`}
-              className="inline-flex items-center gap-2 rounded-2xl border border-on-deep/25 px-6 py-3.5 font-semibold hover:bg-on-deep/10"
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-2xl border border-on-deep/25 px-6 py-3.5 font-semibold hover:bg-on-deep/10"
             >
               <Icon.Phone className="h-5 w-5" /> Call {site.phone}
+            </a>
+          )}
+          {site.phone2 && (
+            <a
+              href={`tel:${site.phone2.replace(/\s+/g, "")}`}
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-2xl border border-on-deep/25 px-6 py-3.5 font-semibold hover:bg-on-deep/10"
+            >
+              <Icon.Phone className="h-5 w-5" /> Call {site.phone2}
             </a>
           )}
         </div>
 
         <div className="mt-24 flex flex-col gap-6 border-t border-on-deep/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <LogoMark className="h-9 w-9" />
+            <LogoMark className="h-11 w-11" />
             <div>
               <p className="font-bold">{site.name}</p>
               <p className="text-sm text-on-deep/65">{site.shortAddress || `Since ${site.since}`}</p>

@@ -2,10 +2,10 @@ import { useRef } from "react";
 import { gsap, useGSAP, MOTION_OK } from "../lib/gsap";
 
 const moments = [
-  { time: "6:00 am", angle: 90, sky: "#e8f5e2", ink: "#163a28", text: "An early start. The hall is calm and the day is all yours." },
-  { time: "1:00 pm", angle: 195, sky: "#cfeac4", ink: "#163a28", text: "Afternoon heat outside, cool air in the AC section." },
-  { time: "9:00 pm", angle: 315, sky: "#1f4a33", ink: "#e6f4e2", text: "Online class or mock test? The Wi-Fi stays on all night." },
-  { time: "3:00 am", angle: 405, sky: "#0b1d14", ink: "#e6f4e2", text: "Last revision before the exam. The lights are still on." },
+  { time: "6:00 am", angle: 90, sky: "#fdf1de", ink: "#012b59", text: "An early start. The hall is calm and the day is all yours." },
+  { time: "1:00 pm", angle: 195, sky: "#cfe9fd", ink: "#012b59", text: "Afternoon heat outside, cool air in the AC section." },
+  { time: "9:00 pm", angle: 315, sky: "#183a63", ink: "#fdf1de", text: "Online class or mock test? The Wi-Fi stays on all night." },
+  { time: "3:00 am", angle: 405, sky: "#040f1f", ink: "#dce8f7", text: "Last revision before the exam. The lights are still on." },
 ];
 
 // Deterministic "random" star field so the markup is stable.

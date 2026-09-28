@@ -286,7 +286,7 @@ export default function Gallery() {
                     href={site.directionsUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-lamp px-5 py-3 font-semibold text-[#1d2a12]"
+                    className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-lamp px-5 py-3 font-semibold text-[#012b59]"
                   >
                     <Icon.Pin className="h-5 w-5" /> Get directions
                   </a>

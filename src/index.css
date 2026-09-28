@@ -1,46 +1,48 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Colour tokens. Light green is taken from the hall's own walls.
+   Colour tokens, lifted straight from the hall's own logo: warm
+   cream fading into sky blue, deep navy ink, saffron and gold
+   accents from the sage's robe and the seats banner.
    "Day" is the default; "night" follows the device's dark mode or the
    toggle in the navbar (data-theme on <html>).
 ------------------------------------------------------------------- */
 :root {
-  --bg: #f2f8ef;          /* sage mist: page background            */
-  --wall: #dcefd8;        /* hall-wall green: primary surface       */
-  --wall-deep: #c6e5c0;
+  --bg: #fefbf6;          /* logo cream: page background            */
+  --wall: #e3f2fe;        /* logo sky blue: primary surface         */
+  --wall-deep: #cfe9fd;
   --surface: #ffffff;     /* paper                                  */
-  --ink: #163a28;         /* bottle green: text and deep sections   */
-  --muted: #4c6a58;
-  --line: #c3dcbf;
-  --leaf: #2f7a45;        /* actions                                */
+  --ink: #012b59;         /* logo navy: text and deep sections      */
+  --muted: #52708f;
+  --line: #dbe9f7;
+  --leaf: #fd7d04;        /* saffron (the sage's robe): actions     */
   --on-leaf: #ffffff;
-  --seat-ac: #6fbf9c;     /* AC seats: cooler teal-green            */
-  --seat-fan: #a6d26a;    /* non-AC seats: warmer leaf-green        */
-  --lamp: #f4b942;        /* desk-lamp amber, used sparingly        */
-  --stamp: #4a3fa0;       /* office-stamp violet ink                */
-  --deep: #163a28;        /* always-dark panels                     */
-  --on-deep: #e6f4e2;
-  --shadow: 22 58 40;
+  --seat-ac: #5aa9e6;     /* AC seats: cool sky blue                */
+  --seat-fan: #f2b64a;    /* non-AC seats: warm gold                */
+  --lamp: #fcbb3e;        /* logo gold banner, used sparingly       */
+  --stamp: #a13b2f;       /* office-stamp red ink                   */
+  --deep: #012b59;        /* always-dark panels: logo navy          */
+  --on-deep: #fdf3e2;
+  --shadow: 1 43 89;
   color-scheme: light;
 }
 
 :root[data-theme="dark"] {
-  --bg: #0e2218;
-  --wall: #15321f;
-  --wall-deep: #1c4029;
-  --surface: #173826;
-  --ink: #e3f2df;
-  --muted: #a7c6b1;
-  --line: #2b4d39;
-  --leaf: #86d196;
-  --on-leaf: #0e2218;
-  --seat-ac: #4fa382;
-  --seat-fan: #86b84f;
-  --lamp: #f4b942;
-  --stamp: #b3a8ff;
-  --deep: #0a1a12;
-  --on-deep: #e3f2df;
+  --bg: #071a30;
+  --wall: #0f2c4d;
+  --wall-deep: #153a63;
+  --surface: #0d2440;
+  --ink: #eef5fc;
+  --muted: #9fbdda;
+  --line: #234061;
+  --leaf: #ff9142;
+  --on-leaf: #201000;
+  --seat-ac: #5db3ef;
+  --seat-fan: #f2b64a;
+  --lamp: #fcbb3e;
+  --stamp: #e3697a;
+  --deep: #04101f;
+  --on-deep: #eef5fc;
   --shadow: 0 0 0;
   color-scheme: dark;
 }

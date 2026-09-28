@@ -24,23 +24,13 @@ function useTheme() {
 }
 
 export function LogoMark({ className = "" }) {
-  // A tiny 3x3 floor plan: the same seats that anchor the hero.
-  const cells = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   return (
-    <svg viewBox="0 0 30 30" className={className} aria-hidden="true">
-      <rect width="30" height="30" rx="8" fill="var(--ink)" />
-      {cells.map((i) => (
-        <rect
-          key={i}
-          x={6 + (i % 3) * 6.6}
-          y={6 + Math.floor(i / 3) * 6.6}
-          width="4.8"
-          height="4.8"
-          rx="1.4"
-          fill={i < 3 ? "var(--seat-ac)" : i === 4 ? "var(--lamp)" : "var(--seat-fan)"}
-        />
-      ))}
-    </svg>
+    <img
+      src="/photos/logo1-removebg-preview.png"
+      alt=""
+      aria-hidden="true"
+      className={`${className} object-contain object-bottom`}
+    />
   );
 }
 
@@ -130,8 +120,13 @@ export default function Navbar() {
     >
       <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-2xl border border-transparent px-3 py-2 transition-all duration-300 group-data-[scrolled=true]:border-line group-data-[scrolled=true]:bg-surface/85 group-data-[scrolled=true]:shadow-soft group-data-[scrolled=true]:backdrop-blur-md sm:px-4">
         <a href="#top" className="flex items-center gap-2.5 rounded-lg" onClick={closeMenu}>
-          <LogoMark className="h-8 w-8" />
-          <span className="text-[1.05rem] font-bold tracking-tight">{site.name}</span>
+          <LogoMark className="h-11 w-11" />
+          <span className="flex flex-col items-center uppercase leading-[1.15]">
+            <span className="text-[1.05rem] font-extrabold tracking-tight">{site.name.split(" ")[0]}</span>
+            <span className="text-[0.78rem] font-extrabold tracking-tight">
+              {site.name.split(" ").slice(1).join(" ")}
+            </span>
+          </span>
         </a>
 
         <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
