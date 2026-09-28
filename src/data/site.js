@@ -8,7 +8,7 @@ export const site = {
 
   // Seats are drawn 15 per row. Set this to the real AC seat count
   // (a multiple of 15 keeps the floor plan tidy). The rest are non-AC.
-  acSeats: 45,
+  acSeats: 75,
 
   selections: 10, // shown as "10+"
 
