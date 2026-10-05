@@ -15,7 +15,7 @@ function Photo({ photo }) {
       {photo.src && state !== "error" && (
         <img
           src={photo.src}
-          alt={state === "loaded" ? photo.title : ""}
+          alt={photo.alt || photo.title}
           loading="eager"
           fetchPriority="low"
           decoding="async"

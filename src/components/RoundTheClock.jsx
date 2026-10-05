@@ -140,7 +140,7 @@ export default function RoundTheClock() {
 
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-5 py-20 md:grid-cols-[1.1fr_1fr] md:gap-12 md:py-24">
           <div>
-            <h2 className="t-h2">Open 24 hours, 7 days a week.</h2>
+            <h2 className="t-h2">Open 24 hours, 7 days a week, in Sangareddy.</h2>
             <p className="t-lead mt-5 hidden opacity-80 sm:block">
               Choose the study hours that suit you: early mornings, late nights, or both.
             </p>

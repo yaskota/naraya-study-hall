@@ -12,6 +12,18 @@ export const site = {
 
   selections: 10, // shown as "10+"
 
+  // ---- SEO ----------------------------------------------------------------
+  // The live address of the site. Used for canonical, sitemap, social cards and structured data.
+  url: "https://narayanastudyhall.com",
+  // Coordinates of the hall (from the Google Maps listing).
+  geo: { lat: 17.5913603, lng: 78.0768397 },
+  // Competitive exams students here prepare for (used in the FAQ and structured data).
+  exams: ["TGPSC Group exams", "Police SI and Constable", "SSC", "RRB", "Banking"],
+  // Places students come from (shown in the footer and used as areaServed).
+  areasServed: ["Sangareddy", "Pothreddipalle", "APHB Colony", "Kandi", "Patancheru"],
+  // Profile URLs (Instagram, Facebook, Justdial, ...). Add them here once they exist.
+  sameAs: [],
+
   // Google Maps link for the hall (used by every "Get directions" button).
   directionsUrl: "https://maps.app.goo.gl/nAkwznu7WkpQzKkZ9",
 
@@ -35,11 +47,11 @@ export const site = {
   // Photos: drop image files into /public/photos using exactly these file names.
   // Until a file exists, its illustration is shown instead, so nothing breaks.
   photos: [
-    { src: "/photos/reading-hall.jpg", scene: "hall", title: "The main reading hall", note: "rows of desks, light green walls" },
-    { src: "/photos/ac-section.jpg", scene: "ac", title: "AC section", note: "cool and quiet all afternoon" },
-    { src: "/photos/desk.jpg", scene: "desk", title: "Your desk", note: "room for books, notes and a laptop" },
-    { src: "/photos/non-ac-section.jpg", scene: "fan", title: "Non-AC section", note: "the same calm, a different corner" },
-    { src: "/photos/entrance.jpg", scene: "entrance", title: "Entrance and parking", note: "ground-floor parking, straight in" },
+    { src: "/photos/reading-hall.jpg", scene: "hall", title: "The main reading hall", alt: "Main reading hall with rows of study desks at Narayana Study Hall, Sangareddy", note: "rows of desks, light green walls" },
+    { src: "/photos/ac-section.jpg", scene: "ac", title: "AC section", alt: "Air-conditioned study section at Narayana Study Hall, Sangareddy", note: "cool and quiet all afternoon" },
+    { src: "/photos/desk.jpg", scene: "desk", title: "Your desk", alt: "Individual study desk at Narayana Study Hall, Sangareddy", note: "room for books, notes and a laptop" },
+    { src: "/photos/non-ac-section.jpg", scene: "fan", title: "Non-AC section", alt: "Non-AC study section with fans at Narayana Study Hall, Sangareddy", note: "the same calm, a different corner" },
+    { src: "/photos/entrance.jpg", scene: "entrance", title: "Entrance and parking", alt: "Entrance and ground-floor parking of Narayana Study Hall on Sangareddy Bypass Road", note: "ground-floor parking, straight in" },
   ],
 
   nearby: [

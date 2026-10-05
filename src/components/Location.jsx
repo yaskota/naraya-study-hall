@@ -114,10 +114,10 @@ export default function Location() {
     <section id="location" ref={rootRef} className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5">
         <div data-loc-head className="mb-12 max-w-2xl sm:mb-16">
-          <h2 className="t-h2">Easy to reach, easy to stay.</h2>
+          <h2 className="t-h2">Find us on Sangareddy Bypass Road.</h2>
           <p className="t-lead mt-5 text-muted">
             {site.shortAddress
-              ? `Find us on ${site.shortAddress}${site.landmark ? `, ${site.landmark}` : ""}. Everything a long study day needs is close by.`
+              ? `${site.name} is in Pothreddipalle, Sangareddy${site.landmark ? `, ${site.landmark}` : ""}. Everything a long study day needs is close by.`
               : "The hall is in a convenient, easily accessible spot, with everything a long study day needs close by."}
           </p>
         </div>

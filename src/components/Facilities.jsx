@@ -268,7 +268,7 @@ export default function Facilities() {
     <section id="facilities" ref={rootRef} className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5">
         <div data-fac-head className="mb-12 max-w-2xl sm:mb-16">
-          <h2 className="t-h2">Everything a long study day needs.</h2>
+          <h2 className="t-h2">Everything a long study day needs, in one study hall.</h2>
           <p className="t-lead mt-5 text-muted">
             The basics are covered, so the only thing you need to bring is your syllabus.
           </p>

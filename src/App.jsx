@@ -7,6 +7,7 @@ import Gallery from "./components/Gallery";
 import RoundTheClock from "./components/RoundTheClock";
 import Results from "./components/Results";
 import Location from "./components/Location";
+import Faq from "./components/Faq";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 
@@ -32,6 +33,7 @@ export default function App() {
         <RoundTheClock />
         <Results />
         <Location />
+        <Faq />
       </main>
       <Footer />
       <WhatsAppButton />

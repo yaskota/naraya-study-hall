@@ -9,6 +9,7 @@ const links = [
   { href: "#photos", label: "Photos" },
   { href: "#hours", label: "Hours" },
   { href: "#location", label: "Location" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 // The page always opens in the light theme; the toggle switches for this visit only.
@@ -26,9 +27,11 @@ function useTheme() {
 export function LogoMark({ className = "" }) {
   return (
     <img
-      src="/photos/logo1-removebg-preview.png"
-      alt=""
-      aria-hidden="true"
+      src="/logo-128.png"
+      alt={`${site.name} logo`}
+      width="128"
+      height="132"
+      decoding="async"
       className={`${className} object-contain object-bottom`}
     />
   );

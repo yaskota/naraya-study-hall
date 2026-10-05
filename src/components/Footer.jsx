@@ -110,7 +110,24 @@ export default function Footer() {
           )}
         </div>
 
-        <div className="mt-24 flex flex-col gap-6 border-t border-on-deep/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-20 grid gap-8 text-on-deep/75 sm:grid-cols-2">
+          <address className="not-italic leading-relaxed">
+            <p className="mb-2 font-bold text-on-deep">{site.name}, Sangareddy</p>
+            {site.address}
+            <br />
+            <a href={`tel:${site.phone.replace(/\s+/g, "")}`} className="hover:text-on-deep">{site.phone}</a>
+            {" · "}
+            <a href={`tel:${site.phone2.replace(/\s+/g, "")}`} className="hover:text-on-deep">{site.phone2}</a>
+          </address>
+          <div className="leading-relaxed">
+            <p className="mb-2 font-bold text-on-deep">24/7 study hall and reading room</p>
+            <p>Open 24 hours, 7 days a week.</p>
+            <p>Serving students from {site.areasServed.join(", ")}.</p>
+            <p lang="te">సంగారెడ్డిలో 24 గంటలు తెరిచి ఉండే స్టడీ హాల్.</p>
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-col gap-6 border-t border-on-deep/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
             <LogoMark className="h-11 w-11" />
             <div>
@@ -123,6 +140,7 @@ export default function Footer() {
             <a href="#facilities" className="hover:text-on-deep">Facilities</a>
             <a href="#photos" className="hover:text-on-deep">Photos</a>
             <a href="#location" className="hover:text-on-deep">Location</a>
+            <a href="#faq" className="hover:text-on-deep">FAQ</a>
           </nav>
           <p className="text-sm text-on-deep/55">© {new Date().getFullYear()} {site.name}</p>
         </div>

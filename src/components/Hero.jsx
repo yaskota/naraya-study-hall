@@ -59,13 +59,16 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
         <div>
+          <p data-hero-fade className="mb-4 text-sm font-bold uppercase tracking-[0.14em] text-muted">
+            Study hall and reading room in Sangareddy
+          </p>
           <h1 ref={titleRef} className="t-hero">
-            A quiet seat for every hour of your preparation.
+            A quiet seat in Sangareddy for every hour of your preparation.
           </h1>
 
           <p data-hero-fade className="t-lead mt-7 text-muted">
-            {site.name} is a {site.totalSeats}-seat study space with AC and non-AC sections, free Wi-Fi and doors
-            that stay open 24 hours a day, 7 days a week.
+            {site.name} is a {site.totalSeats}-seat study hall in Sangareddy with AC and non-AC sections, free Wi-Fi
+            and doors that stay open 24 hours a day, 7 days a week.
           </p>
 
           <div data-hero-fade className="mt-9 flex flex-wrap gap-3">

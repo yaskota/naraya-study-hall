@@ -7,5 +7,5 @@ Drop the hall's photos into this folder with these exact names:
   entrance.jpg         -> "Entrance and parking"
 
 Any photo that isn't here yet shows its illustration instead.
-Landscape photos about 1600px wide work best (keep each under ~400 KB).
-To add more photos or use .png/.webp, edit the photos list in src/data/site.js.
+Landscape photos about 1600px wide work best. Keep each under ~200 KB (WebP is smaller than JPG).
+To use .webp/.png or add more photos, edit the photos list in src/data/site.js (each has an `alt` text for search engines).

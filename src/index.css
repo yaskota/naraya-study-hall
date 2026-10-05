@@ -64,7 +64,7 @@
   --color-deep: var(--deep);
   --color-on-deep: var(--on-deep);
 
-  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", "Bricolage Grotesque", ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
   --font-hand: "Kalam", "Segoe Print", "Comic Sans MS", cursive;
 }
 
